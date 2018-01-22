@@ -1,30 +1,40 @@
 import React from  'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 
 class MemoList extends React.Component {
     render(){
         return(
             <View style={styles.memolist}>
-                <View style={styles.memolistItem}>
-                    <Text style={styles.memoTitle}>講座のアイテム</Text>
-                    <Text style={styles.memoDate}>2017/01/21</Text>
-                </View>
-                <View style={styles.memolistItem}>
-                    <Text style={styles.memoTitle}>講座のアイテム</Text>
-                    <Text style={styles.memoDate}>2017/01/21</Text>
-                </View>
-                <View style={styles.memolistItem}>
-                    <Text style={styles.memoTitle}>講座のアイテム</Text>
-                    <Text style={styles.memoDate}>2017/01/21</Text>
-                </View>
-                <View style={styles.memolistItem}>
-                    <Text style={styles.memoTitle}>講座のアイテム</Text>
-                    <Text style={styles.memoDate}>2017/01/21</Text>
-                </View>
-                <View style={styles.memolistItem}>
-                    <Text style={styles.memoTitle}>講座のアイテム</Text>
-                    <Text style={styles.memoDate}>2017/01/21</Text>
-                </View>
+                <TouchableHighlight onPress={() => { this.props.navigation.navigate('MemoDetail') }}>
+                    <View style={styles.memolistItem}>
+                        <Text style={styles.memoTitle}>講座のアイテム</Text>
+                        <Text style={styles.memoDate}>2017/01/21</Text>
+                    </View>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => { this.props.navigation.navigate('MemoDetail') }}>
+                    <View style={styles.memolistItem}>
+                        <Text style={styles.memoTitle}>講座のアイテム</Text>
+                        <Text style={styles.memoDate}>2017/01/21</Text>
+                    </View>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => { this.props.navigation.navigate('MemoDetail') }}>
+                    <View style={styles.memolistItem}>
+                        <Text style={styles.memoTitle}>講座のアイテム</Text>
+                        <Text style={styles.memoDate}>2017/01/21</Text>
+                    </View>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => { this.props.navigation.navigate('MemoDetail') }}>
+                    <View style={styles.memolistItem}>
+                        <Text style={styles.memoTitle}>講座のアイテム</Text>
+                        <Text style={styles.memoDate}>2017/01/21</Text>
+                    </View>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => { this.props.navigation.navigate('MemoDetail') }}>
+                    <View style={styles.memolistItem}>
+                        <Text style={styles.memoTitle}>講座のアイテム</Text>
+                        <Text style={styles.memoDate}>2017/01/21</Text>
+                    </View>
+                </TouchableHighlight>
             </View>
         );
     }
