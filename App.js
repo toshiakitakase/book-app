@@ -1,6 +1,7 @@
 // import React from 'react';
 // import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import firebase from 'firebase';
 
 // import AppBar from './src/components/AppBar'
 
@@ -27,8 +28,24 @@ import SignupScreen from './src/screens/SignupScreen'
 //   }
 // }
 
+const config = {
+  apiKey: 'AIzaSyAye1Jib2KYxwPgeDI7BIEz4N9AMUTd7Pw',
+  authDomain: 'book-app-5f173.firebaseapp.com',
+  databaseURL: 'https://book-app-5f173.firebaseio.com',
+  projectId: 'book-app-5f173',
+  storageBucket: 'book-app-5f173.appspot.com',
+  messagingSenderId: '587387063236',
+};
+firebase.initializeApp(config);
+
 const App = StackNavigator({
-  
+
+  Login: {
+    screen: LoginScreen,
+  },
+  Signup: {
+    screen: SignupScreen,
+  },
   Home: {
     screen: MemoListScreen,
   },
@@ -38,15 +55,12 @@ const App = StackNavigator({
   MemoEdit: {
     screen: MemoEditScreen,
   },
-  Login: {
-    screen: LoginScreen,
-  },
-  Signup: {
-    screen: SignupScreen,
-  },
+
 }, {
   navigationOptions: {
     headerTitle: 'Memot',
+    headerTintColor: '#fff',
+    headerBackTitle: null,
     headerStyle: {
       backgroundColor: '#265366',
     },
