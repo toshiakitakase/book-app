@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableHighlight } from 'react-native';
 
+import firebase from 'firebase';
+
 class LoginScreen extends React.Component {
     state  = {
         email: '',
@@ -8,10 +10,14 @@ class LoginScreen extends React.Component {
     }
 
     handleSubmit() {
-
-
-        //ログイン処理
-
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((user) => {
+                console.log('Success', user);
+                this.props.navigation.navigate('Home');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     render() {
@@ -36,7 +42,7 @@ class LoginScreen extends React.Component {
                     secureTextEntry
                 />
                 <TouchableHighlight 
-                    style={styles.button} onPress={ () => {this.handleSubmit.bind(this)} } underlayColor='#c70f66'>
+                    style={styles.button} onPress={ this.handleSubmit.bind(this) } underlayColor='#c70f66'>
                     <Text style={styles.buttonTitle}>ログインする</Text>
                 </TouchableHighlight>
             </View>
